@@ -10,12 +10,12 @@ public class Disciplina {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(nullable = false) //não vai deixar ser nulo
+    @Column(nullable = false)
     private String nome;
     private Integer semestre;
 
     @ManyToOne
-    @JoinColumn(name = "professor_id",nullable = true) //nulnable (uma disciplina pode ser criada sem ser associada a um professor)
+    @JoinColumn(name = "professor_id",nullable = true) 
     private Professor professor;
 
 
