@@ -14,7 +14,7 @@ public class Professor {
     private String nome;
 
 
-    @OneToMany(mappedBy = "professor",cascade = CascadeType.ALL) // cascade.all toda ves que deletar um professor todas as materia associadas a ele vai ser exclidada tambem
+    @OneToMany(mappedBy = "professor",cascade = CascadeType.ALL) 
     private List<Disciplina> disciplinas;
 
 
