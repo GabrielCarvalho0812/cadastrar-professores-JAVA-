@@ -72,15 +72,14 @@ public class CrudProfessorService {
 
         Optional<Professor> optional = this.professorRepository.findById(id);
 
-        //se o hibernate conseguiu achar uma tupla na tabela de professores com id igual passado pelo usuario
-        //O método isPresent()  é usado para descobrir se há um valor presente nesta instância Optional. Se não houver nenhum valor presente nessa instância opcional, esse método retornará false, else true.
+       
         if (optional.isPresent()) {
             System.out.print("digite o nome do professor");
             String nome = scanner.next();
 
             Professor professor = optional.get();
             professor.setNome(nome);
-            professorRepository.save(professor); // atualiza o obejto registro ou tupla no BD
+            professorRepository.save(professor); 
             System.out.println("Professor autualizado com sucesso!!!\n");
 
         } else {
@@ -89,7 +88,7 @@ public class CrudProfessorService {
     }
 
     private void visualizar() {
-        Iterable<Professor> professores = this.professorRepository.findAll(); //va no BD e pegue todos os valores
+        Iterable<Professor> professores = this.professorRepository.findAll(); 
 
         for (Professor professor : professores) {
             System.out.println(professor);
@@ -105,7 +104,7 @@ public class CrudProfessorService {
         Optional<Professor> optional = this.professorRepository.findById(id);
 
         if (optional.isPresent()) {
-            this.professorRepository.deleteById(id);//lançara uma exception se não achar o ID na tabela
+            this.professorRepository.deleteById(id);
             System.out.println("professor deletado\n");
             System.out.println();
         }
